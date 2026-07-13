@@ -1,0 +1,18 @@
+name: CI Test Workflow
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Simulate work
+        run: |
+          echo "Starting CI test job"
+          sleep 20
+          echo "Job finished at $(date)"
